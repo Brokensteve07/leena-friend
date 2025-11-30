@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | MindBuddy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        <div class="logo">MindBuddy</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chatbot.html">Chatbot</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+        
+        <div class="user-auth-section" style="display: flex; align-items: center; gap: 15px;">
+            <div class="user-profile" id="userProfile" style="display: none; align-items: center; gap: 10px;">
+                <span id="userName">User</span>
+                <img id="userPic" src="img/default-avatar.png" alt="Profile" style="width: 35px; height: 35px; border-radius: 50%;">
+            </div>
+
+            <a href="login.html" id="navLoginBtn" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.9em;">Login</a>
+
+            <div class="toggle-switch">
+                <label for="darkModeToggle">🌙</label>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label for="musicToggle">🎶</label>
+                <label class="switch">
+                    <input type="checkbox" id="musicToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+    <main class="container">
+        <h2 style="font-size: 2.5rem; margin: 30px 0; color: var(--clr-primary);">📚 Student Resources</h2>
+
+        <section class="resource-section">
+            <h3 style="margin-bottom: 20px;">Articles for Students</h3>
+            <div class="resource-list">
+                <div class="card">
+                    <h4>The Ultimate Guide to Beating Procrastination</h4>
+                    <p>Techniques for time management and breaking down large tasks.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="card">
+                    <h4>Healthy Eating Habits for a Sharper Mind</h4>
+                    <p>Fuel your brain with the right foods to boost concentration and mood.</p>
+                    <a href="#">Read More</a>
+                </div>
+                <div class="card">
+                    <h4>Understanding and Managing Social Anxiety in College</h4>
+                    <p>Tips for feeling more comfortable in social and academic settings.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="resource-section">
+            <h3 style="margin-bottom: 20px;">Mindfulness & Educational Videos</h3>
+            <div class="resource-list">
+                <div class="card">
+                    <h4>Video: 15-Minute Calming Visualization</h4>
+                    <p>A simple video to guide you through a peaceful mental escape.</p>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Watch on YouTube (Placeholder)</a>
+                </div>
+                <div class="card">
+                    <h4>Video: How Stress Affects Your Study Habits</h4>
+                    <p>An educational video explaining the science behind stress and learning.</p>
+                    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Watch on YouTube (Placeholder)</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="emergency-contacts card">
+            <h2>🚨 Emergency & Immediate Help</h2>
+            <p>If you or someone you know is in crisis, please use these resources immediately. You are not alone.</p>
+            <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+                <li style="margin-bottom: 10px;">
+                    **National Suicide Prevention Lifeline:** <a href="tel:988">988 (US/Canada)</a>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    **Crisis Text Line:** Text **HOME** to <a href="sms:741741">741741</a>
+                </li>
+                <li style="margin-bottom: 10px;">
+                    **University/School Counselor:** [Insert School's Phone Number Here]
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MindBuddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

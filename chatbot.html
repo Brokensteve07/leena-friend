@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot | MindBuddy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        <div class="logo">MindBuddy</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chatbot.html">Chatbot</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+        
+        <div class="user-auth-section" style="display: flex; align-items: center; gap: 15px;">
+            <div class="user-profile" id="userProfile" style="display: none; align-items: center; gap: 10px;">
+                <span id="userName">User</span>
+                <img id="userPic" src="img/default-avatar.png" alt="Profile" style="width: 35px; height: 35px; border-radius: 50%;">
+            </div>
+
+            <a href="login.html" id="navLoginBtn" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.9em;">Login</a>
+
+            <div class="toggle-switch">
+                <label for="darkModeToggle">🌙</label>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label for="musicToggle">🎶</label>
+                <label class="switch">
+                    <input type="checkbox" id="musicToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+    <main>
+        <div class="card chatbot-interface">
+            <div class="chat-header">
+                <h2>🤖 Buddy AI Chatbot</h2>
+                <p style="font-size: 0.9em; margin-top: 5px;">A safe, non-judgmental space.</p>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="bot-message message-bubble">Hey there! I'm Buddy. I'm here to help you talk through things like **stress**, **anxiety**, or just needing some **motivation**. What's going on?</div>
+                
+                <div class="user-message message-bubble">I'm really stressed about my upcoming exams and I keep overthinking everything.</div>
+
+                <div class="bot-message message-bubble">That sounds tough! It's completely normal to feel that way. How about we try a quick **breathing exercise** to ground you, or talk about one small thing you can control right now?</div>
+
+                <div class="bot-message message-bubble">
+                    <p style="font-weight: 600; margin-bottom: 5px;">I can help with:</p>
+                    <a href="#" style="margin-right: 10px;">#Anxiety</a>
+                    <a href="#" style="margin-right: 10px;">#Sleep Tips</a>
+                    <a href="#">#Motivation</a>
+                </div>
+
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="if(event.keyCode == 13) sendMessage()">
+                <button onclick="sendMessage()">➤</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MindBuddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- BASIC RULE-BASED CHATBOT LOGIC ---
+
+        const messagesContainer = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+
+        function getBotResponse(message) {
+            const msg = message.toLowerCase();
+
+            if (msg.includes('hello') || msg.includes('hi') || msg.includes('hey')) {
+                return "Hi there! I'm Buddy. I'm here to listen and help you feel better. What's on your mind today?";
+            } 
+            
+            // Stress/Overwhelm Response
+            if (msg.includes('stress') || msg.includes('overwhelmed') || msg.includes('tired')) {
+                return "It sounds like you're carrying a heavy load right now. Remember to take a break. How about a 5-minute **Mindfulness Exercise** to reset? (Check the Dashboard for guides!)";
+            }
+
+            // Anxiety/Worry Response
+            if (msg.includes('anxiety') || msg.includes('worry') || msg.includes('nervous') || msg.includes('exam')) {
+                return "Feeling nervous is tough, especially around exams. Focus on your breath for 30 seconds. Inhale, hold, exhale. You got this. Want to try a **Grounding Technique**?";
+            }
+
+            // Motivation Response
+            if (msg.includes('motivate') || msg.includes('unmotivated') || msg.includes('procrastinate')) {
+                return "It's hard to get started sometimes. Let's try breaking down your biggest task into three tiny steps. Small wins lead to big success! Need a **Study Tip**?";
+            }
+
+            // Sleep Response
+            if (msg.includes('sleep') || msg.includes('can\'t sleep') || msg.includes('tired')) {
+                return "Sleep is so important for students! Try powering down all screens 30 minutes before bed, and read a calming book instead. Need a **Sleep Wind-Down Guide**?";
+            }
+
+            // General Supportive Response
+            if (msg.length > 5) {
+                return "Thank you for sharing that with me. That's a valid feeling. Just talking about it is a great first step. I'm here if you want to write more in your **Journal**.";
+            }
+
+            // Fallback
+            return "Hmm, I'm not sure I understood that. Could you tell me more about what you're feeling? You can talk to me about stress, anxiety, or motivation.";
+        }
+
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+
+            if (message) {
+                // 1. Add User Message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'user-message message-bubble';
+                userMsg.textContent = message;
+                messagesContainer.appendChild(userMsg);
+
+                // Clear input
+                chatInput.value = '';
+
+                // Scroll to bottom immediately
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+                // 2. Get and Add Bot Response (Simulated delay for realism)
+                const botResponseText = getBotResponse(message);
+
+                setTimeout(() => {
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'bot-message message-bubble';
+                    botMsg.textContent = botResponseText;
+                    messagesContainer.appendChild(botMsg);
+                    
+                    // Scroll to bottom after bot reply
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 800); // 800ms delay
+
+            }
+        }
+
+        // Send message on Enter key press
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initialize with default messages
+        document.addEventListener('DOMContentLoaded', () => {
+             // Ensure the initial welcome message is only added once
+             if (messagesContainer.children.length === 0 || messagesContainer.children[0].textContent.includes("Hey there! I'm Buddy")) {
+                 // Initial message already exists from static HTML
+             } else {
+                 const initialBotMsg = document.createElement('div');
+                 initialBotMsg.className = 'bot-message message-bubble';
+                 initialBotMsg.textContent = "Hey there! I'm Buddy. I'm here to listen and help you feel better. What's on your mind today?";
+                 messagesContainer.prepend(initialBotMsg);
+             }
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

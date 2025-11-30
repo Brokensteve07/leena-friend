@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MindBuddy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Specific CSS for the Login Page Layout */
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--clr-background), var(--clr-secondary));
+        }
+
+        .login-card {
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .login-card h2 {
+            font-size: 2rem;
+            color: var(--clr-primary);
+            margin-bottom: 30px;
+        }
+
+        .login-options button {
+            width: 100%;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        /* Minor override for a clean login look */
+        .navbar { display: none; }
+        .footer { margin-top: 0; }
+    </style>
+</head>
+<body>
+
+    <main class="login-container">
+        <div class="card login-card">
+            <h2>Welcome to MindBuddy</h2>
+            <p style="margin-bottom: 25px; color: var(--clr-text-light);">Log in or sign up to access your personal well-being tools.</p>
+            
+            <div class="login-options">
+                
+                <button id="googleLoginBtn" class="btn btn-primary">
+                    <img src="img/google-icon.png" alt="Google Icon" style="width: 20px; height: 20px; filter: invert(1);">
+                    Login with Google
+                </button>
+
+                <button class="btn btn-outline" style="border-color: var(--clr-text-light); color: var(--clr-text-light);" disabled>
+                    Login with Email (Future)
+                </button>
+                <p style="font-size: 0.9em; margin-top: 15px;">
+                    Don't have an account? It's free and easy! Logging in with Google creates one instantly.
+                </p>
+                
+                <a href="index.html" style="display: block; margin-top: 30px;">← Back to Home</a>
+            </div>
+            
+            <p id="authError" style="color: red; margin-top: 15px;"></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 MindBuddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

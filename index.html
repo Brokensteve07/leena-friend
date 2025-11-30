@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBuddy – Your Personal Mental Health Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+<body>
+
+    <header class="navbar">
+    <div class="container">
+        <div class="logo">MindBuddy</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="chatbot.html">Chatbot</a>
+            <a href="resources.html">Resources</a>
+        </nav>
+        
+        <div class="user-auth-section" style="display: flex; align-items: center; gap: 15px;">
+            <div class="user-profile" id="userProfile" style="display: none; align-items: center; gap: 10px;">
+                <span id="userName">User</span>
+                <img id="userPic" src="img/default-avatar.png" alt="Profile" style="width: 35px; height: 35px; border-radius: 50%;">
+            </div>
+
+            <a href="login.html" id="navLoginBtn" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.9em;">Login</a>
+
+            <div class="toggle-switch">
+                <label for="darkModeToggle">🌙</label>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="toggle-switch">
+                <label for="musicToggle">🎶</label>
+                <label class="switch">
+                    <input type="checkbox" id="musicToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Your Personal Mental Health Assistant – Always Here for You</h1>
+                <p>MindBuddy provides students with a safe, private space to manage stress, track mood, and access tools for emotional well-being.</p>
+                <div class="hero-buttons">
+                    <a href="chatbot.html" id="startChatBtn" class="btn btn-primary">Start Chat</a>
+                    <button id="googleLoginBtn" class="btn btn-outline">Login with Google</button>
+                    </div>
+            </div>
+            <div class="container hero-illustration">
+                <img src="img/mental_health_illustration.svg" alt="Student using mental health app illustration">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px; color: var(--clr-primary);">Tools for Your Well-being</h2>
+                <div class="features-grid">
+                    <div class="card feature-card">
+                        <h3>Stress Management</h3>
+                        <p>Learn effective techniques to handle daily pressure and find balance in your academic life.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <h3>Exam Anxiety Control</h3>
+                        <p>Specific strategies and exercises to calm your nerves before and during high-stakes exams.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <h3>Mood Tracking</h3>
+                        <p>Daily logging to recognize patterns, understand triggers, and monitor your emotional journey.</p>
+                    </div>
+                    <div class="card feature-card">
+                        <h3>Mindfulness Exercises</h3>
+                        <p>Guided meditations and breathing exercises for immediate relief and improved focus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" style="padding: 50px 0; background-color: var(--clr-card-bg);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 40px; color: var(--clr-primary);">What Students Say</h2>
+                <div class="features-grid">
+                    <blockquote class="card" style="border-left: 5px solid var(--clr-primary);">
+                        "MindBuddy is a lifesaver. The chatbot feels genuinely supportive, and the mood tracker helped me see my progress." - *Alex M.*
+                    </blockquote>
+                    <blockquote class="card" style="border-left: 5px solid var(--clr-primary);">
+                        "The breathing exercises are perfect for my exam anxiety. Simple, clean design makes it easy to use." - *Sam T.*
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-form" style="max-width: 500px; margin: 0 auto 20px;">
+                <h4>Contact Us</h4>
+                <input type="text" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </div>
+            <p>&copy; 2025 MindBuddy. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
